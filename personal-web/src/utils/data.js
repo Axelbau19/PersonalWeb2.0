@@ -19,11 +19,11 @@ import {
 
 } from "lucide-react";
 
-import {FiGithub, FiLinkedin} from "react-icons/fi"
+import {FiGithub, FiLinkedin} from "react-icons/fi";
 
 /* Project IMG */
 
-import PROJECT_IMG_1 from '../assets/projects/example.jpg'
+import PROJECT_IMG_1 from '../assets/projects/example.jpg';
 
 
 export const SKILLS_CATEGORY = [
@@ -91,18 +91,18 @@ export const SKILLS_CATEGORY = [
         ]
     }
 
-]
+];
 
 export const TECH_STACK = [
     "Power Bi", "Pandas","Numpy","Sckit-learn","Figma", "Github","Jira", "Linux","Gitlab"
-]
+];
 
 
 export const STATS =[
      {number:"20", label:"Projects Completed" },
      {number:"4+", label:"Years Experience" },
      {number:"15+", label:"Technologies" },
-]
+];
 
 
 export const Projects = [
@@ -116,7 +116,7 @@ export const Projects = [
     featured:false,
     category:"Web"
    }
-]
+];
 
 
 export const DEVELOPMENT_JOURNEY = [
@@ -150,7 +150,7 @@ export const DEVELOPMENT_JOURNEY = [
       icon: Briefcase,
       color: "bg-blue-500"
     }
-]
+];
 
 
 export const PASSIONS = [
@@ -164,7 +164,7 @@ export const PASSIONS = [
         title:"Continuos learning",
         description:"Always keeping up to learn new technologies and best practices"
     },
-]
+];
 
 
 export const SOCIAL_MEDIA = [
@@ -182,11 +182,31 @@ export const SOCIAL_MEDIA = [
         color:"hover:text-sky-400",
         bgColor: "hover:bg-sky-500/10"
     },
-        {
+    {
         name:"Mail",
         icon: Mail,
-        url: "https://www.linkedin.com/in/axel-bautista-68a800241/",
+        url: "mailto:bautista.ros.naranja.2017@gmail.com",
         color:"hover:text-sky-400",
         bgColor: "hover:bg-sky-500/10"
     },
-]
+];
+
+
+export const CONTACT_INFO = [
+
+    {
+        icon: MapPin,
+        label: "Location",
+        value: "Mexico City,CDMX"
+    },
+    {
+        icon: Mail,
+        label : "Email",
+        value: "bautista.ros.naranja.2017@gmail.com"
+    },
+    {
+        icon: Phone,
+        label : "Phone",
+        value: "+52 5610461321"
+    },
+];
