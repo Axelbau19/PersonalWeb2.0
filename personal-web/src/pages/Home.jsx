@@ -1,9 +1,7 @@
+import HeroSection from "../components/sections/HeroSection";
+
 export const Home = () => {
     return <div>
-        {/* Choose theme */}
-        <h1>Home</h1>
-        {/*Background*/}
-
-        {}
+        <HeroSection/>
     </div>
 };
