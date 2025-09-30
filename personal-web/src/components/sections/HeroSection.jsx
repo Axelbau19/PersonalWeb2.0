@@ -29,13 +29,13 @@ function HeroSection() {
     }
 
     const itemVar = {
-        hidden: {y:30,opacity:0},
-        visible:{
-            y:0,
-            opacity:1,
-            transition:{
-                duration:0.8,
-                ease:"easeOut"
+        hidden: { y: 30, opacity: 0 },
+        visible: {
+            y: 0,
+            opacity: 1,
+            transition: {
+                duration: 0.8,
+                ease: "easeOut"
             }
         }
     }
@@ -129,7 +129,7 @@ function HeroSection() {
                                 className={`text-sm uppercase tracking-widest ${isDarkMode ? "text-gray-500" : "text-gray-600"} mb-4`
                                 }
                             >
-                                Data Science and Data Engineer
+                                Data Science and Data Engineer Jr
                             </motion.div>
                             <motion.h1
                                 variants={itemVar}
@@ -138,11 +138,11 @@ function HeroSection() {
                                     Transforming raw data into
                                 </span>
                                 <span className="text-blue-500 font-medium ml-2">
-                                    insights 
+                                    insights
                                 </span>
-                                <br/>
+                                <br />
                                 <span className={`${isDarkMode ? "text-white" : "text-white-900"}`}>
-                                     that generate growth
+                                    that generate growth
                                 </span>
                             </motion.h1>
                             <motion.p
@@ -224,22 +224,171 @@ function HeroSection() {
                                     className={isDarkMode ? "text-gray-600" : "text-gray-500"}>
                                     SQL
                                 </span>
+                                <span
+                                    className={isDarkMode ? "text-gray-600" : "text-gray-500"}>
+                                    G Cloud
+                                </span>
                             </motion.div>
                         </motion.div>
                     </div>
+                    <div className="hidden lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
+                        <motion.div
+                            initial="hidden"
+                            animate="visible"
+                            variants={containerV}
+                            className="text-left"
+                        >
+                            <motion.div
+                                variants={textVar}
+                                className={`text-sm uppercase tracking widest ${isDarkMode ? "text-gray-500" : "text-gray-600"
+                                    } mb-6`}>
+                                Data Science and Data Engineer Jr
+                            </motion.div>
+                            <motion.h1
+                                variants={itemVar}
+                                className="text-5xl xl:text-7xl font-light mb-8 leading-tight">
+                                <span className={`${isDarkMode ? "text-white" : "text-gray-900"}`}>
+                                    Transforming raw data into
+                                </span>
+                                <br />
+                                <span className="text-blue-500 font-medium">
+                                    insights
+                                </span>
+                                <br />
+                                <span className={`${isDarkMode ? "text-white" : "text-white-900"}`}>
+                                    that generate growth
+                                </span>
+                            </motion.h1>
+                            <motion.p
+                                variants={itemVar}
+                                className={`text-xl ${isDarkMode ? "text-gray-400" : "text-gray-600"
 
+                                    } mb-12 font-light leading-relaxed max-w-lg`}>
+                                Data Developer focused on building and deploying end-to-end data solutions. I write production-grade code in Python and SQL to orchestrate scalable pipelines.
+                            </motion.p>
+                            <motion.div
+                                variants={itemVar}
+                                className="flex gap-6 mb-8">
+                                <motion.button
+                                    whileHover={{ y: -2 }}
+                                    whileTap={{ scale: 0.98 }}
+                                    onClick={() => scrollToSection("work")}
+                                    className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full text-sm uppercase tracking-wider font-medium transition-all duration=300">
+                                    View Work
+                                </motion.button>
+                                <motion.button
+                                    whileHover={{ y: -2 }}
+                                    whileTap={{ scale: 0.98 }}
+                                    onClick={() => scrollToSection("contact")}
+                                    className={`border ${isDarkMode ? "border-gray-700 hover:border-gray-600 text-gray-300" : "border-gray-300 hover:border-gray-400 text-gray-700"
+                                        } px-8 py-3 rounded-full text-sm uppercase tracking-wider font-medium transition-all duration-300  `}>
+                                    Get in Touch
+                                </motion.button>
+                            </motion.div>
+                            <motion.div variants={itemVar}
+                                className="flex space-x-6 mb-12" >
+                                {
+                                    [
+                                        { icon: FiGithub, href: "https://github.com/Axelbau19" },
+                                        { icon: FiLinkedin, href: "https://www.linkedin.com/in/axel-bautista-68a800241/" },
+                                        { icon: Mail, href: "bautista.ros.naranja.2017@gmail.com" }
+                                    ].map((social, index) => (
+                                        <motion.a
+                                            key={index}
+                                            href={social.href}
+                                            whileHover={{ y: -3, scale: 1.1 }}
+                                            className={`p-3 rounded-full transition-colors ${isDarkMode ? "text-gray-400 hover:text-white hover:bg-gray-800" :
+                                                "text-gray-600 hover:text-gray-900 hover:bg-gray-200"
+                                                }`}
+                                        >
+                                            <social.icon size={20} />
+                                        </motion.a>
+                                    ))
+                                }
+                            </motion.div >
+                        </motion.div>
+                        <motion.div
+                            initial="hidden"
+                            animate="visible"
+                            variants={imgVar}
+                            className="flex justify-center lg:justify-end">
+                            <div className="relative">
+                                <motion.div
+                                    variants={itemVar}
+                                    className="flex items-center space-x-8 text-xs uppercase tracking-widest absolute -top-16 -left-28">
+                                    <span
+                                        className={isDarkMode ? "text-gray-600" : "text-gray-500"}>
+                                        Python
+                                    </span>
+                                    <span
+                                        className={isDarkMode ? "text-gray-600" : "text-gray-500"}>
+                                        •
+                                    </span>
+                                    <span
+                                        className={isDarkMode ? "text-gray-600" : "text-gray-500"}>
+                                        Scala
+                                    </span>
+                                    <span
+                                        className={isDarkMode ? "text-gray-600" : "text-gray-500"}>
+                                        •
+                                    </span>
+                                    <span
+                                        className={isDarkMode ? "text-gray-600" : "text-gray-500"}>
+                                        Power BI
+                                    </span>
+                                    <span
+                                        className={isDarkMode ? "text-gray-600" : "text-gray-500"}>
+                                        •
+                                    </span>
+                                    <span
+                                        className={isDarkMode ? "text-gray-600" : "text-gray-500"}>
+                                        SQL
+                                    </span>
+                                    <span
+                                        className={isDarkMode ? "text-gray-600" : "text-gray-500"}>
+                                        G Cloud
+                                    </span>
+                                </motion.div>
+                                <motion.div
+                                    whileHover={{ scale: 1.02 }}
+                                    className={`w-80 h-96 rounded-3xl overflow-hidden border-4 ${isDarkMode ? "border-gray-800" : "border-gray-300"} shadow-2xl`}>
+                                    <img
+                                        src={PROFILE_PIC}
+                                        alt="Profile"
+                                        className="w-full h-full object-cover  " />
+                                </motion.div>
+                                <motion.div
+                                    animate={{ rotate: 360 }}
+                                    transition={{
+                                        duration: 20,
+                                        repeat: Infinity,
+                                        ease: "linear"
+                                    }}
+                                    className="absolute -inset-4 rounded-3xl border border-blue-500/20" />
+                                <motion.div
+                                    animate={{ rotate: -360 }}
+                                    transition={{
+                                        duration: 30,
+                                        repeat: Infinity,
+                                        ease: "linear"
+                                    }}
+                                    className="absolute -inset-8 rounded-3xl border border-purple-500/10" />
+                            </div>
+                        </motion.div>
+                    </div>
                 </div>
+
                 <motion.div
-                animate={{y:[0,8,0]}}
-                transition={{duration:2,repeat:Infinity}}
-                className="absolute bottom-8 left-1/2 transform -translate-x-1/2  ">
-                    <ArrowDown size={20} className={isDarkMode?"text-gray-600":"text-gray-400"}>
+                    animate={{ y: [0, 8, 0] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                    className="absolute bottom-8 left-1/2 transform -translate-x-1/2  ">
+                    <ArrowDown size={20} className={isDarkMode ? "text-gray-600" : "text-gray-400"}>
 
                     </ArrowDown>
 
                 </motion.div>
-            </motion.section>
-        </div>
+            </motion.section >
+        </div >
 
 
 
