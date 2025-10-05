@@ -23,7 +23,7 @@ import {FiGithub, FiLinkedin} from "react-icons/fi";
 
 /* Project IMG */
 
-import PROJECT_IMG_1 from '../assets/projects/example.jpg';
+import PROJECT_IMG_1 from '../assets/img/example.jpg';
 
 
 export const SKILLS_CATEGORY = [
@@ -32,15 +32,15 @@ export const SKILLS_CATEGORY = [
         icon:FileChartColumn,
         description:"#",
         skills: [
-            {name: "Power Bi", level: 90, color: "from-blue-500"},
-            {name: "Tableau", level: 89, color: "from-orange-500"},
-            {name: "Excel/Sheets", level: 95, color: "from-green-500"},
-            {name: "Python", level: 95, color: "from-purple-500"},
-            {name: "Pandas python", level: 90, color: "from-blue-700"},
-            {name: "Numpy python", level: 90, color: "from-yellow-500"},
-            {name: "Statistics and probability", level: 90, color: "from-red-500"},
-            {name: "Scalar", level: 85, color: "from-pink-500"},
-            {name: "Storytelling", level: 90, color: "from-indigo-500"},
+            {name: "Power Bi", level: 90, color: "bg-blue-500"},
+            {name: "Tableau", level: 89, color: "bg-orange-500"},
+            {name: "Excel/Sheets", level: 95, color: "bg-green-500"},
+            {name: "Python", level: 95, color: "bg-purple-500"},
+            {name: "Pandas python", level: 90, color: "bg-blue-700"},
+            {name: "Numpy python", level: 90, color: "bg-yellow-500"},
+            {name: "Statistics and probability", level: 90, color: "bg-red-500"},
+            {name: "Scalar", level: 85, color: "bg-pink-500"},
+            {name: "Storytelling", level: 90, color: "bg-indigo-500"},
         ]
     },
         {
@@ -48,25 +48,13 @@ export const SKILLS_CATEGORY = [
         icon:Server,
         description:"#",
         skills: [
-            {name: "Java", level: 90, color: "from-blue-500"},
-            {name: "Kotlin", level: 90, color: "from-orange-500"},
-            {name: "Node.js", level: 95, color: "from-green-500"},
-            {name: "Linux", level: 95, color: "from-purple-500"},
-            {name: "Postman", level: 90, color: "from-blue-700"},
-            {name: "Goo", level: 90, color: "from-blue-700"},
-            {name: "Desing Patterns", level: 90, color: "from-yellow-500"}
-        ]
-    },
-    {
-        title: "Front-end Development",
-        icon:Code2,
-        description:"#",
-        skills: [
-            {name: "Javascript ECMAScript", level: 90, color: "from-blue-500"},
-            {name: "React", level: 90, color: "from-orange-500"},
-            {name: "Vue.js", level: 95, color: "from-green-500"},
-            {name: "Linux", level: 95, color: "from-purple-500"},
-            {name: "Figma", level: 90, color: "from-blue-700"},
+            {name: "Java", level: 90, color: "bg-blue-500"},
+            {name: "Kotlin", level: 90, color: "bg-orange-500"},
+            {name: "Node.js", level: 95, color: "bg-green-500"},
+            {name: "Linux", level: 95, color: "bg-purple-500"},
+            {name: "Postman", level: 90, color: "bg-blue-700"},
+            {name: "Goo", level: 90, color: "bg-blue-700"},
+            {name: "Desing Patterns", level: 90, color: "bg-yellow-500"}
         ]
     },
 
@@ -75,10 +63,10 @@ export const SKILLS_CATEGORY = [
         icon:Database,
         description: "#",
         skills: [
-            {name: "SQL", level: 90, color: "from-blue-500"},
-            {name: "Postgresql", level: 90, color: "from-orange-500"},
-            {name: "MongoDB", level: 95, color: "from-green-500"},
-            {name:"Firebase",level:90,color:"from-yellow-500"}
+            {name: "SQL", level: 90, color: "bg-blue-500"},
+            {name: "Postgresql", level: 90, color: "bg-orange-500"},
+            {name: "MongoDB", level: 95, color: "bg-green-500"},
+            {name:"Firebase",level:90,color:"bg-yellow-500"}
         ]
     },
 
@@ -87,7 +75,7 @@ export const SKILLS_CATEGORY = [
         icon:Cloud,
         description:"#",
         skills: [
-            {name: "Google Cloud", level: 90, color: "from-blue-500"},
+            {name: "Google Cloud", level: 90, color: "bg-blue-500"},
         ]
     }
 
