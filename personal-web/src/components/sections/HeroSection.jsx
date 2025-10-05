@@ -2,11 +2,12 @@ import React from 'react'
 import { delay, easeIn, motion, stagger, useScroll, useTransform } from 'framer-motion'
 import { ArrowDown, Mail } from 'lucide-react'
 import { FiGithub, FiLinkedin } from "react-icons/fi";
-import { useTheme } from '../../context/ThemeContext'
+import { useTheme } from '../../context/ThemeContext';
+import {containerV,itemVar} from '../../utils/datastyle'
 
 import PROFILE_PIC from '../../assets/img/personalPic.jpg'
 function HeroSection() {
-    const { isDarkMode } = useTheme
+    const { isDarkMode } = useTheme();
     const { scrollY } = useScroll()
     const heroY = useTransform(scrollY, [0, 500], [0, -100])
 
@@ -14,29 +15,6 @@ function HeroSection() {
         const element = document.getElementById(id)
         if (element) {
             element.scrollIntoView({ behavior: "smooth" })
-        }
-    }
-    const containerV = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.2,
-                delayChildren: 0.3,
-
-            },
-        }
-    }
-
-    const itemVar = {
-        hidden: { y: 30, opacity: 0 },
-        visible: {
-            y: 0,
-            opacity: 1,
-            transition: {
-                duration: 0.8,
-                ease: "easeOut"
-            }
         }
     }
 
