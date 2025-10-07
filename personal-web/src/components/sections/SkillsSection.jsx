@@ -84,8 +84,8 @@ export default function SkillsSection() {
                             key={category.title}
                             variants={itemVar}
                             className={`p-8 rounded-2xl border ${isDarkMode
-                                    ? "bg-gray-900/50 border-gray-800 backdrop-blur-sm"
-                                    : "bg-white/80 border-gray-200 backdrop-blur-sm"
+                                ? "bg-gray-900/50 border-gray-800 backdrop-blur-sm"
+                                : "bg-white/80 border-gray-200 backdrop-blur-sm"
                                 }`}
                         >
 
@@ -141,9 +141,35 @@ export default function SkillsSection() {
                         </motion.div>
                     ))}
                 </motion.div>
+                <motion.div
+                    initial="hidden"
+                    animate={isInView ? "visible" : "hidden"}
+                    variants={containerV}
+                    className="mt-16">
 
+                    <motion.div
+                        variants={itemVar}
+                        className="text-center mb-8">
+                        <h3 className="text-xl font-medium mb-4 ">Also Working With</h3>
+                    </motion.div>
+                    <motion.div
+                        variants={itemVar}
+                        className="flex flex-wrap justify-center gap-3">                        {TECH_STACK.map((tech, index) => (
+                            <motion.span
+                                key={tech}
+                                whileHover={{ y: -2, scale: 1.05 }}
+                                className={`px-4 py-2 text-sm rounded-full border transition-all duration ${isDarkMode ? "bg=gray-900 border-gray-700 text-gray-300 hover:border-gray-600"
+                                        : "bg-white border-gray-300 text-gray-700 hover:border-gray-400"
+                                    }`}>
+                                {tech}
+                            </motion.span>
+                        ))}
+
+                    </motion.div>
+
+                </motion.div>
             </div>
-            
+
 
 
         </section>
