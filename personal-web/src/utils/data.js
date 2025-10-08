@@ -90,7 +90,7 @@ export const STATS =[
      {number:"20+", label:"Projects Completed" },
      {number:"4+", label:"Years Experience" },
      {number:"15+", label:"Technologies" },
-     {number:"100%", label:"Technologies" },
+     {number:"100%", label:"Keep up-to-date" },
 ];
 
 
