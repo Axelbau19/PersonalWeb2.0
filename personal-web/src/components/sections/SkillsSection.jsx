@@ -168,9 +168,30 @@ export default function SkillsSection() {
                     </motion.div>
 
                 </motion.div>
+                <motion.div
+                initial="hidden"
+                animate={isInView ? "visible":"hidden" }
+                variants={containerV}
+                className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8">
+                    {STATS.map((stats,index) => (
+                        <motion.div
+                        key={stats.label}
+                        variants={itemVar}
+                        className="text-center"
+                        >
+                            <div className="text-2xl md:text-3xl font-light text-blue-500 mb-2">
+                                {stats.number} 
+                            </div>
+                            <div className={`text-sm ${
+                                isDarkMode ? "text-gray-400":"text-gray-600"
+                            }`}>
+                                {stats.label}
+                            </div>
+                        </motion.div>
+                    ))}
+
+                </motion.div>
             </div>
-
-
 
         </section>
     )
