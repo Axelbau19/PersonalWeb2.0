@@ -82,14 +82,15 @@ export const SKILLS_CATEGORY = [
 ];
 
 export const TECH_STACK = [
-    "Power Bi", "Pandas","Numpy","Sckit-learn","Figma", "Github","Jira", "Linux","Gitlab"
+    "Power Bi", "Pandas","Numpy","Sckit-learn","Java", "Github","Jira", "Linux","Gitlab"
 ];
 
 
 export const STATS =[
-     {number:"20", label:"Projects Completed" },
+     {number:"20+", label:"Projects Completed" },
      {number:"4+", label:"Years Experience" },
      {number:"15+", label:"Technologies" },
+     {number:"100%", label:"Technologies" },
 ];
 
 
