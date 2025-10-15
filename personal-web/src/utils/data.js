@@ -23,7 +23,7 @@ import {FiGithub, FiLinkedin} from "react-icons/fi";
 
 /* Project IMG */
 
-import PROJECT_IMG_1 from '../assets/img/example.jpg';
+import PROJECT_IMG_1 from '../assets/img/poliAgenda.jpg';
 
 
 export const SKILLS_CATEGORY = [
@@ -100,6 +100,7 @@ export const Projects = [
     title:"Poliagenda",
     image: PROJECT_IMG_1,
     tags: ["Java","Gradlew","Android Studio","Firebase"],
+    description:"#",
     liveUrl:"#",
     githubUrl:"https://github.com/Esa70192/agenda",
     featured:false,
