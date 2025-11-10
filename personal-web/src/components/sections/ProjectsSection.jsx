@@ -21,7 +21,7 @@ function ProjectsSection() {
         <section
             id="work"
             ref={sectionRef}
-            className={`py-24 px-6 ${isDarkMode ? "bg-gray-950 text-white" : "bg-gray-50 text-gray-900"
+            className={`py-24 px-6 ${isDarkMode ? "bg-gray-950 text-white" : "bg-white text-gray-900"
                 } relative overflow-hidden`}>
             <div className="absolute inset-0 overflow-hidden">
                 <div className={`absolute top-20 left-1/4 w-96 h-96 rounded-full blur-3xl opacity-5 ${isDarkMode ? "bg-blue-500" : "bg-blue-400"
