@@ -19,9 +19,11 @@ const NavBar = () => {
         ${isDarkMode ? "bg-gray-950/80" : "bg-gray-50/80"}
         backdrop-blur-md border-b ${isDarkMode ? "boder-gray-800" : "border-gray-200"}`}>
             <div className="max-w-7xl mx-auto flex items-center justify-between">
-                <motion.div whileHover={{ scale: 1.05 }} className="flex items-center space-x-2">
+                <motion.div whileHover={{ scale: 1.05 }} className={`flex items-center space-x-2 ${isDarkMode ? "text-gray-400 hover:text-white" :
+                                    "text-gray-600 hover:text-gray-900"}`}>
                     <Ghost size={24} />{""}
-                    <span className="text-lg ml-1">XW∅LVE</span>
+                    <span className={`text-lg ml-1 ${isDarkMode ? "text-gray-400 hover:text-white" :
+                                    "text-gray-600 hover:text-gray-900"}` }>XW∅LVE</span>
                 </motion.div>
                 <div className="hidden md:flex items center space-x-8">
                     {/* */}
