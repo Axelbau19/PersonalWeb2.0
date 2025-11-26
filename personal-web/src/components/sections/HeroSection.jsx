@@ -156,7 +156,7 @@ function HeroSection() {
                                     [
                                         { icon: FiGithub, href: "https://github.com/Axelbau19" },
                                         { icon: FiLinkedin, href: "https://www.linkedin.com/in/axel-bautista-68a800241/" },
-                                        { icon: Mail, href: "bautista.ros.naranja.2017@gmail.com" }
+                                        
                                     ].map((social, index) => (
                                         <motion.a
                                             key={index}
@@ -269,7 +269,7 @@ function HeroSection() {
                                     [
                                         { icon: FiGithub, href: "https://github.com/Axelbau19" },
                                         { icon: FiLinkedin, href: "https://www.linkedin.com/in/axel-bautista-68a800241/" },
-                                        { icon: Mail, href: "bautista.ros.naranja.2017@gmail.com" }
+                                        
                                     ].map((social, index) => (
                                         <motion.a
                                             key={index}

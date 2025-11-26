@@ -157,7 +157,7 @@ export const PASSIONS = [
 ];
 
 
-export const SOCIAL_MEDIA = [
+export const SOCIAL_LINK = [
     {
         name:"Github",
         icon: FiGithub,
@@ -172,13 +172,7 @@ export const SOCIAL_MEDIA = [
         color:"hover:text-sky-400",
         bgColor: "hover:bg-sky-500/10"
     },
-    {
-        name:"Mail",
-        icon: Mail,
-        url: "mailto:bautista.ros.naranja.2017@gmail.com",
-        color:"hover:text-sky-400",
-        bgColor: "hover:bg-sky-500/10"
-    },
+
 ];
 
 
