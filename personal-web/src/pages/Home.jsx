@@ -3,6 +3,7 @@ import HeroSection from "../components/sections/HeroSection";
 import ProjectsSection from "../components/sections/ProjectsSection";
 import SkillsSection from "../components/sections/SkillsSection";
 import ContactSection from "../components/sections/ContactSection";
+import { FooterSection } from "../components/sections/FooterSection";
 
 export const Home = () => {
     return <div>
@@ -11,6 +12,6 @@ export const Home = () => {
         <ProjectsSection/>
         <AboutSection/>
         <ContactSection/>
-
+        <FooterSection/>
     </div>
 };
