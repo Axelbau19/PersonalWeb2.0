@@ -1,4 +1,4 @@
-import { useState, useRef, use } from "react"
+import { useState, useRef, useEffect } from "react"
 import {
     motion,
     useInView,
@@ -12,6 +12,13 @@ import { CONTACT_INFO, SOCIAL_LINK } from "../../utils/data"
 import { containerV, itemVar } from "../../utils/datastyle"
 import TextInput from "../input/TextInput"
 import { SuccessModel } from "../SuccessModel"
+import emailjs from '@emailjs/browser'
+const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
+const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+const EMAIL_CONTACT = import.meta.env.VITE_CONTACT_EMAIL
+
+
 
 function ContactSection() {
     const { isDarkMode } = useTheme()
@@ -29,16 +36,36 @@ function ContactSection() {
         offset: ["start end", "end start"]
     })
 
+    useEffect(() => {
+        emailjs.init(PUBLIC_KEY)
+    }, [])
+
     const handleSubmit = async (e) => {
+
         e.preventDefault();
         setIsSubmitting(true)
-
-        await new Promise((resolve) => setTimeout(resolve, 1000))
-
+        if (!formData.name || !formData.email || !formData.message) {
+            alert("Complete los datos")
+            setIsSubmitting(false)
+            return;
+        }
+        try {
+            await emailjs.send(
+                SERVICE_ID,
+                TEMPLATE_ID,
+                {
+                    user_name: formData.name,
+                    user_email: formData.email,
+                    message: formData.message
+                }
+            );
+            setShowSuccess(true)
+            setFormData({ name: "", email: "", message: "" })
+            setTimeout(() => setShowSuccess(false), 3000)
+        } catch (error) {
+            console.log("Error", error)
+        }
         setIsSubmitting(false)
-        setShowSuccess(true)
-        setFormData({ name: "", email: "", message: "" })
-        setTimeout(() => setShowSuccess(false), 3000)
     }
 
     const y = useTransform(scrollYProgress, [0, 1], [50, -50])
@@ -108,66 +135,70 @@ function ContactSection() {
                                 }`}
                         >
                             <h3 className="text-2xl font-medium mb-8">Send me a direct message</h3>
+                            /* Formulario*/
+                            <form method="post">
+                                <div className="space-y-6">
 
-                            <div className="space-y-6">
-                                <div className="grid md:grid-cols-2 gap-6">
+                                    <div className="grid md:grid-cols-2 gap-6">
+                                        <TextInput
+                                            isDarkMode={isDarkMode}
+                                            value={formData.name}
+                                            handleInputChange={(text) =>
+                                                handleInputChange("name", text)
+                                            }
+                                            label="Your Name"
+
+                                        />
+
+                                        <TextInput
+                                            isDarkMode={isDarkMode}
+                                            label="Email Address"
+                                            value={formData.email}
+                                            handleInputChange={(text) =>
+                                                handleInputChange("email", text)
+                                            }
+                                        />
+                                    </div>
+
                                     <TextInput
                                         isDarkMode={isDarkMode}
-                                        value={formData.name}
+                                        label="Your Message"
+                                        value={formData.message}
+                                        textarea
                                         handleInputChange={(text) =>
-                                            handleInputChange("name", text)
+                                            handleInputChange("message", text)
                                         }
-                                        label="Your Name"
                                     />
 
-                                    <TextInput
-                                        isDarkMode={isDarkMode}
-                                        label="Email Address"
-                                        value={formData.email}
-                                        handleInputChange={(text) =>
-                                            handleInputChange("email", text)
-                                        }
-                                    />
+                                    <motion.button
+                                        disabled={isSumitting}
+                                        whileHover={{ y: -2, scale: 1.02 }}
+                                        whileTap={{ scale: 0.98 }}
+                                        className="w-full bg-blue-500 hover:bg-blue-600 disabled:bg-blue-400 text-white py-4 rounded-xl text-sm uppercase tracking-wider font-medium transition-all duration-300 flex items-center justify-center space-x-2"
+                                        onClick={handleSubmit}
+                                    >
+                                        {isSumitting ? (
+                                            <>
+                                                <motion.div
+                                                    animate={{ rotate: 360 }}
+                                                    transition={{
+                                                        duration: 1,
+                                                        repeat: Infinity,
+                                                        ease: "linear",
+                                                    }}
+                                                    className="w-4 h-4 border-2 border-white border-t-transparent rounded-full"
+                                                />
+                                                <span>Sending...</span>
+                                            </>
+                                        ) : (
+                                            <>
+                                                <Send size={18} />
+                                                <span>Send Message</span>
+                                            </>
+                                        )}
+                                    </motion.button>
                                 </div>
-
-                                <TextInput
-                                    isDarkMode={isDarkMode}
-                                    label="Your Message"
-                                    value={formData.message}
-                                    textarea
-                                    handleInputChange={(text) =>
-                                        handleInputChange("message", text)
-                                    }
-                                />
-
-                                <motion.button
-                                    disabled={isSumitting}
-                                    whileHover={{ y: -2, scale: 1.02 }}
-                                    whileTap={{ scale: 0.98 }}
-                                    className="w-full bg-blue-500 hover:bg-blue-600 disabled:bg-blue-400 text-white py-4 rounded-xl text-sm uppercase tracking-wider font-medium transition-all duration-300 flex items-center justify-center space-x-2"
-                                    onClick={handleSubmit}
-                                >
-                                    {isSumitting ? (
-                                        <>
-                                            <motion.div
-                                                animate={{ rotate: 360 }}
-                                                transition={{
-                                                    duration: 1,
-                                                    repeat: Infinity,
-                                                    ease: "linear",
-                                                }}
-                                                className="w-4 h-4 border-2 border-white border-t-transparent rounded-full"
-                                            />
-                                            <span>Sending...</span>
-                                        </>
-                                    ) : (
-                                        <>
-                                            <Send size={18} />
-                                            <span>Send Message</span>
-                                        </>
-                                    )}
-                                </motion.button>
-                            </div>
+                            </form>
                         </motion.div>
                     </motion.div>
 
@@ -181,14 +212,14 @@ function ContactSection() {
                             <h3 className="text-xl font-medium mb-6 ">Contact Information</h3>
                             <div className="space-y-4">
                                 {CONTACT_INFO.map((info, index) => (
-                                    
+
                                     <motion.div
                                         key={info.label}
                                         variants={itemVar}
                                         whileHover={{ x: 4 }}
                                         className={`flex items-center space-x-4 p-4 rounded-xl ${isDarkMode
-                                                ? "bg-gray-800/30 hover:bg-gray-800/50"
-                                                : "bg-gray-50/50 hover:bg-gray-100/50"
+                                            ? "bg-gray-800/30 hover:bg-gray-800/50"
+                                            : "bg-gray-50/50 hover:bg-gray-100/50"
                                             } transition-all duration-300`}
                                     >
 
