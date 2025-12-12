@@ -13,10 +13,12 @@ import { containerV, itemVar } from "../../utils/datastyle"
 import TextInput from "../input/TextInput"
 import { SuccessModel } from "../SuccessModel"
 import emailjs from '@emailjs/browser'
+import { WarningSuccesModel } from "../WarningModel"
+import { FailModel } from "../FailModel"
 const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
 const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
 const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
-const EMAIL_CONTACT = import.meta.env.VITE_CONTACT_EMAIL
+
 
 
 
@@ -28,6 +30,8 @@ function ContactSection() {
         message: ""
     })
     const [showSuccess, setShowSuccess] = useState(false)
+    const [showFail,setShowFail]=useState(false)
+    const [showWarning, setShowWarning] = useState(false)
     const [isSumitting, setIsSubmitting] = useState(false)
     const sectionRef = useRef(null)
     const isInView = useInView(sectionRef, { once: true, margin: "-100px" })
@@ -45,9 +49,12 @@ function ContactSection() {
         e.preventDefault();
         setIsSubmitting(true)
         if (!formData.name || !formData.email || !formData.message) {
-            alert("Complete los datos")
+            setShowWarning(true)
+            setFormData({ name: "", email: "", message: "" })
+            setTimeout(() => setShowWarning(false), 3000)
             setIsSubmitting(false)
             return;
+
         }
         try {
             await emailjs.send(
@@ -63,7 +70,11 @@ function ContactSection() {
             setFormData({ name: "", email: "", message: "" })
             setTimeout(() => setShowSuccess(false), 3000)
         } catch (error) {
-            console.log("Error", error)
+            setShowFail(true)
+            setFormData({ name: "", email: "", message: "" })
+            setTimeout(() => setShowFail(false), 3000)
+            setIsSubmitting(false)
+            
         }
         setIsSubmitting(false)
     }
@@ -135,7 +146,7 @@ function ContactSection() {
                                 }`}
                         >
                             <h3 className="text-2xl font-medium mb-8">Send me a direct message</h3>
-                            /* Formulario*/
+
                             <form method="post">
                                 <div className="space-y-6">
 
@@ -299,6 +310,8 @@ function ContactSection() {
 
             </div>
             <SuccessModel showSuccess={showSuccess} setShowSuccess={setShowSuccess} isDarkMode={isDarkMode} />
+            <WarningSuccesModel showWarning={showWarning} setShowWarning={setShowWarning} isDarkMode={isDarkMode}/>
+            <FailModel showFail={showFail} setShowFail={setShowFail} isDarkMode={isDarkMode}/>
         </section>
     )
 }
