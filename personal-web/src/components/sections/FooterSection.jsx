@@ -96,7 +96,6 @@ export const FooterSection = () => {
                             className="space-y-4">
                             <motion.div
                                 className="inline-flex items-center space-x-2 text-2xl font-medium"
-                                whileHover={{ scale: 1.05 }}
                                 transition={{ type: "spring", stiffness: 400 }}>
                                 <motion.div
                                     animate={{ rotate: 360 }}
@@ -124,12 +123,6 @@ export const FooterSection = () => {
                                     className={`p-3 rounded-full transition-all duration-300 ${isDarkMode ? 'bg-gray-800/50 hover:bg-gray-700/50' :
                                         'bg-gray-100/50 hover:bg-gray-200/50'
                                         } ${social.color} backdrop-blur-sm`}
-                                    whileHover={{
-                                        scale: 1.1,
-                                        y: -2,
-                                        rotate: [0, -5, 5, 0]
-                                    }}
-                                    whileTap={{ scale: 0.95 }}
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                                     transition={{
