@@ -226,7 +226,7 @@ const AboutSection = () => {
                             <p className={`text-lg ${
                                 isDarkMode ? "text-gray-400":"text-gray-600"
                             }`}>
-                                Ready to generate insights ?
+                                Let’s deploy some insights!
                             </p>
 
                             <motion.button
