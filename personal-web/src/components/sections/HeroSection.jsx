@@ -3,7 +3,7 @@ import { delay, easeIn, motion, stagger, useScroll, useTransform } from 'framer-
 import { ArrowDown, Mail } from 'lucide-react'
 import { FiGithub, FiLinkedin } from "react-icons/fi";
 import { useTheme } from '../../context/ThemeContext';
-import {containerV,itemVar} from '../../utils/datastyle'
+import { containerV, itemVar } from '../../utils/datastyle'
 
 import PROFILE_PIC from '../../assets/img/personalPic.jpg'
 function HeroSection() {
@@ -107,27 +107,27 @@ function HeroSection() {
                                 className={`text-sm uppercase tracking-widest ${isDarkMode ? "text-gray-500" : "text-gray-600"} mb-4`
                                 }
                             >
-                                Data Science and Data Engineer Jr
+                                Fullstack Developer Jr.
                             </motion.div>
                             <motion.h1
                                 variants={itemVar}
                                 className="text-3xl md:text-5xl font-light mb-6 leading-tight">
                                 <span className={`${isDarkMode ? "text-white" : "text-white-900"}`}>
-                                    Transforming raw data into
+                                    From Front-end to Back-end
                                 </span>
                                 <span className="text-blue-500 font-medium ml-2">
-                                    insights
+                                    Crafting Complete Solution
                                 </span>
                                 <br />
                                 <span className={`${isDarkMode ? "text-white" : "text-white-900"}`}>
-                                    that generate growth
+                                    that deliver value
                                 </span>
                             </motion.h1>
                             <motion.p
                                 variants={itemVar}
                                 className={`text-base md:text-lg ${isDarkMode ? "text-gray-400" : "text-gray-600"}
                                     mb-8 max-w-xl mx-auto font-light leading-relaxed  `}>
-                                Data Developer focused on building and deploying end-to-end data solutions. I write production-grade code in Python and SQL to orchestrate scalable pipelines.
+                                Full-stack developer passionate about creating end-to-end web applications. I work across frontend and backend to deliver reliable, scalable, and impactful digital products.
                             </motion.p>
                             <motion.div
                                 variants={itemVar}
@@ -156,7 +156,7 @@ function HeroSection() {
                                     [
                                         { icon: FiGithub, href: "https://github.com/Axelbau19" },
                                         { icon: FiLinkedin, href: "https://www.linkedin.com/in/axel-bautista-68a800241/" },
-                                        
+
                                     ].map((social, index) => (
                                         <motion.a
                                             key={index}
@@ -177,14 +177,6 @@ function HeroSection() {
                                 <span
                                     className={isDarkMode ? "text-gray-600" : "text-gray-500"}>
                                     Python
-                                </span>
-                                <span
-                                    className={isDarkMode ? "text-gray-600" : "text-gray-500"}>
-                                    •
-                                </span>
-                                <span
-                                    className={isDarkMode ? "text-gray-600" : "text-gray-500"}>
-                                    Scala
                                 </span>
                                 <span
                                     className={isDarkMode ? "text-gray-600" : "text-gray-500"}>
@@ -220,21 +212,21 @@ function HeroSection() {
                                 variants={textVar}
                                 className={`text-sm uppercase tracking widest ${isDarkMode ? "text-gray-500" : "text-gray-600"
                                     } mb-6`}>
-                                Data Science and Data Engineer Jr
+                                Fullstack Developer Jr.
                             </motion.div>
                             <motion.h1
                                 variants={itemVar}
                                 className="text-5xl xl:text-7xl font-light mb-8 leading-tight">
                                 <span className={`${isDarkMode ? "text-white" : "text-gray-900"}`}>
-                                    Transforming raw data into
+                                    From Front-end to Back-end
                                 </span>
                                 <br />
                                 <span className="text-blue-500 font-medium">
-                                    insights
+                                    Crafting Complete Solution
                                 </span>
                                 <br />
                                 <span className={`${isDarkMode ? "text-white" : "text-white-900"}`}>
-                                    that generate growth
+                                    that deliver value
                                 </span>
                             </motion.h1>
                             <motion.p
@@ -242,7 +234,7 @@ function HeroSection() {
                                 className={`text-xl ${isDarkMode ? "text-gray-400" : "text-gray-600"
 
                                     } mb-12 font-light leading-relaxed max-w-lg`}>
-                                Data Developer focused on building and deploying end-to-end data solutions. I write production-grade code in Python and SQL to orchestrate scalable pipelines.
+                                Full-stack developer passionate about creating end-to-end web applications. I work across frontend and backend to deliver reliable, scalable, and impactful digital products.
                             </motion.p>
                             <motion.div
                                 variants={itemVar}
@@ -269,7 +261,7 @@ function HeroSection() {
                                     [
                                         { icon: FiGithub, href: "https://github.com/Axelbau19" },
                                         { icon: FiLinkedin, href: "https://www.linkedin.com/in/axel-bautista-68a800241/" },
-                                        
+
                                     ].map((social, index) => (
                                         <motion.a
                                             key={index}
@@ -302,14 +294,7 @@ function HeroSection() {
                                         className={isDarkMode ? "text-gray-600" : "text-gray-500"}>
                                         •
                                     </span>
-                                    <span
-                                        className={isDarkMode ? "text-gray-600" : "text-gray-500"}>
-                                        Scala
-                                    </span>
-                                    <span
-                                        className={isDarkMode ? "text-gray-600" : "text-gray-500"}>
-                                        •
-                                    </span>
+
                                     <span
                                         className={isDarkMode ? "text-gray-600" : "text-gray-500"}>
                                         Power BI
