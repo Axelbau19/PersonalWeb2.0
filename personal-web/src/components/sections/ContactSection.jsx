@@ -127,7 +127,7 @@ function ContactSection() {
                         variants={itemVar}
                         className={`text-xl max-w-2xl mx-auto ${isDarkMode ? "text-gray-400" : "text-gray-600"
                             }`}>
-                        Ready to start your next insight? Let's talk how we can bring your ideas to insights
+                        Ready to start your next idea? Let’s talk about how we can turn it into a real product.
                     </motion.p>
 
                 </motion.div>
