@@ -68,7 +68,7 @@ export default function SkillsSection() {
                         className={`text-lg ${isDarkMode ? "text-gray-400" :
                             "text-gray-600"
                             } max-w-2xl mx-auto font-light`}>
-                        Full-stack data skills in SQL, ETL, web technologies, and Business Intelligence, delivering end-to-end solutions from database to dashboard.
+                        Full-Stack Web & Data Engineer skilled in JavaScript, Node.js, SQL, APIs, ETL pipelines, and modern frontend frameworks, delivering end-to-end solutions from database to user interface.
 
                     </motion.p>
 

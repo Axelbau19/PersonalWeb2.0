@@ -92,11 +92,11 @@ const AboutSection = () => {
                             <p
                                 className={`text-lg leading-relaxed mb-6
                             ${isDarkMode ? "text-gray-300" : "text-gray-700"}`}>
-                                Example
+                                Build and rebuild projects
                             </p>
                             <p className={`text-base leading-relaxed ${isDarkMode ? "text-gray-400" : "text-gray-600"
                                 }`}>
-                                when papu
+                                Continuously learning, improving skills, and transforming ideas into functional solutions.
                             </p>
 
                         </motion.div>
